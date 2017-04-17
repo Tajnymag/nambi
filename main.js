@@ -1,4 +1,6 @@
 var express = require('express');
+fs = require('fs');
+var dgram = require('dgram');
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
@@ -15,3 +17,9 @@ io.on('connection', function(socket) {
 http.listen(3000, function() {
     console.log('Listening on port 3000');
 });
+
+skt = dgram.createSocket('udp4');
+skt.bind(19446);
+skt.on('message', function(msg, info){
+    console.log(msg.toString());
+})
