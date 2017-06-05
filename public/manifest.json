@@ -1,0 +1,12 @@
+{
+  "name": "Nambi Client",
+  "short_name": "Nambi",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "Not AmbiLight Client",
+
+  "related_applications": [{
+    "platform": "web"
+  }]
+}

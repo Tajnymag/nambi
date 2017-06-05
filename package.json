@@ -25,6 +25,7 @@
   "homepage": "https://github.com/Tajnymag/nambi#readme",
   "dependencies": {
     "express": "^4.15.2",
-    "socket.io": "^1.7.3"
+    "socket.io": "^1.7.3",
+    "yargs": "^8.0.1"
   }
 }
