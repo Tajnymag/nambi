@@ -13,6 +13,7 @@ const hParser = require("./parser.js")(dgram);
 
 let HTTP_PORT = 3000;
 let HYPERION_PORT = 19446;
+let REVERSE_ORDER = false;
 
 function handleArguments() {
     if (argv.http !== undefined) {
@@ -20,6 +21,9 @@ function handleArguments() {
     }
     if (argv.hyperion !== undefined) {
         HYPERION_PORT = argv.hyperion;
+    }
+    if (argv.reverse !== undefined) {
+        REVERSE_ORDER = argv.reverse;
     }
 }
 
@@ -52,6 +56,13 @@ function main() {
         }
 
         let parsed_lights = hParser.parseRawLights(msg);
+
+        if (REVERSE_ORDER) {
+            parsed_lights.red.reverse();
+            parsed_lights.green.reverse();
+            parsed_lights.blue.reverse();
+        }
+
         io.emit("message", parsed_lights);
         last_dgram_msg = msg;
     });
