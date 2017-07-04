@@ -1,6 +1,6 @@
 {
   "name": "nambi",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A Not-(exatly)-Ambilight solution",
   "main": "main.js",
   "bin": {
